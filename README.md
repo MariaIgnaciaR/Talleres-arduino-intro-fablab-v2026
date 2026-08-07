@@ -41,21 +41,27 @@ El taller se divide en **3 sesiones de 1.5 horas** cada una:
 - [TinkerCad Circuits](https://www.tinkercad.com/) (simulador online, usado para demostraciones)
 
 ## 📂 Estructura del repositorio
+introduccion-arduino-fablab/
+│
 ├── sesion-1/
-│ ├── actividad-1-blink.ino
-│ ├── actividad-2-circuito-led.ino
-│ └── actividad-4-semaforo.ino
+│   ├── actividad-1-blink.ino
+│   ├── actividad-2-circuito-led.ino
+│   └── actividad-4-semaforo.ino
+│
 ├── sesion-2/
-│ ├── actividad-5-ldr.ino
-│ ├── actividad-6-potenciometro.ino
-│ └── actividad-7-sistema-reactivo.ino
+│   ├── actividad-5-ldr.ino
+│   ├── actividad-6-potenciometro.ino
+│   └── actividad-7-sistema-reactivo.ino
+│
 ├── sesion-3/
-│ ├── actividad-8-servo.ino
-│ ├── actividad-9-boton-buzzer.ino
-│ └── proyecto-final/
-│ ├── combo-1-alarma.ino
-│ ├── combo-2-semaforo-boton.ino
-│ └── combo-3-servo-potenciometro.ino
+│   ├── actividad-8-servo.ino
+│   ├── actividad-9-boton-buzzer.ino
+│   │
+│   └── proyecto-final/
+│       ├── combo-1-alarma.ino
+│       ├── combo-2-semaforo-boton.ino
+│       └── combo-3-servo-potenciometro.ino
+│
 └── README.md
 
 ## 🚀 Cómo usar este repositorio
