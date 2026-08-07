@@ -1,0 +1,59 @@
+# Combo 1: Alarma (LDR + Buzzer)
+int ldr = A0;
+int buzzer = 8;
+
+void setup() {
+  pinMode(buzzer, ______);
+}
+
+void loop() {
+  int valor = analogRead(______);
+  if (valor < ____) {          // ajusta el umbral según la luz de tu sala
+    tone(buzzer, 1000);
+  } else {
+    ______(buzzer);
+  }
+}
+
+
+# Combo 2: Semáforo peatonal (3 LEDs + Botón)
+int rojo = 8, amarillo = 9, verde = 10, boton = 2;
+
+void setup() {
+  pinMode(rojo, OUTPUT);
+  pinMode(amarillo, ______);
+  pinMode(verde, ______);
+  pinMode(boton, ______);
+}
+
+void loop() {
+  digitalWrite(verde, HIGH);
+  for (int i = 0; i < 3000; i += 50) {
+    if (digitalRead(______) == LOW) break;
+    delay(50);
+  }
+  digitalWrite(verde, LOW);
+
+  // Completa: enciende amarillo 1 segundo y apágalo
+  ______
+
+  // Completa: enciende rojo 3 segundos y apágalo
+  ______
+}
+
+
+# Combo 3: Control manual (Servo + Potenciómetro)
+#include <Servo.h>
+Servo miServo;
+int pot = A0;
+
+void setup() {
+  miServo.______(9);
+}
+
+void loop() {
+  int valor = analogRead(______);
+  int angulo = map(valor, 0, 1023, 0, ____);
+  miServo.write(______);
+  delay(15);
+}
