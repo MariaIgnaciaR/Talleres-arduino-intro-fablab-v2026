@@ -1,0 +1,120 @@
+#SESIÓN 1
+
+# Actividad 1 — Blink (LED integrado)
+void setup() {
+  pinMode(13, OUTPUT);
+}
+void loop() {
+  digitalWrite(13, HIGH);
+  delay(1000);
+  digitalWrite(13, LOW);
+  delay(1000);
+}
+
+# Actividad 2 — Circuito LED
+int led = 8;
+void setup() {
+  pinMode(led, OUTPUT);
+}
+void loop() {
+  digitalWrite(led, HIGH);
+  delay(500);
+  digitalWrite(led, LOW);
+  delay(500);
+}
+
+# Actividad 4 — Semáforo (versión simple, sin botón)
+int rojo = 8;
+int amarillo = 9;
+int verde = 10;
+void setup() {
+  pinMode(rojo, OUTPUT);
+  pinMode(amarillo, OUTPUT);
+  pinMode(verde, OUTPUT);
+}
+void loop() {
+  digitalWrite(verde, HIGH);
+  delay(3000);
+  digitalWrite(verde, LOW);
+  digitalWrite(amarillo, HIGH);
+  delay(1000);
+  digitalWrite(amarillo, LOW);
+  digitalWrite(rojo, HIGH);
+  delay(3000);
+  digitalWrite(rojo, LOW);
+}
+
+
+#SESIÓN 2
+
+# Actividad 5 — Circuito LDR
+int ldr = A0;
+void setup() {
+  Serial.begin(9600);
+}
+void loop() {
+  int valor = analogRead(ldr);
+  Serial.println(valor);
+  delay(200);
+}
+
+# Actividad 6 — LED con brillo variable (potenciómetro)
+int pot = A0;
+int led = 9;
+void setup() {
+  pinMode(led, OUTPUT);
+}
+void loop() {
+  int valor = analogRead(pot);
+  int brillo = map(valor, 0, 1023, 0, 255);
+  analogWrite(led, brillo);
+}
+
+# Actividad 7 — Sistema reactivo (LDR + LED)
+int ldr = A0;
+int led = 9;
+void setup() {
+  pinMode(led, OUTPUT);
+}
+void loop() {
+  int valor = analogRead(ldr);
+  if (valor < 300) {
+    digitalWrite(led, HIGH);
+  } else {
+    digitalWrite(led, LOW);
+  }
+}
+
+
+#SESIÓN 3
+
+# Actividad 8 — Control de Servomotor
+#include <Servo.h>
+Servo miServo;
+void setup() {
+  miServo.attach(9);
+}
+void loop() {
+  miServo.write(0);
+  delay(1000);
+  miServo.write(90);
+  delay(1000);
+  miServo.write(180);
+  delay(1000);
+}
+
+# Actividad 9 — Botón + Buzzer
+int boton = 2;
+int buzzer = 8;
+void setup() {
+  pinMode(boton, INPUT_PULLUP);
+  pinMode(buzzer, OUTPUT);
+}
+void loop() {
+  if (digitalRead(boton) == LOW) {
+    tone(buzzer, 1000);
+  } else {
+    noTone(buzzer);
+  }
+}
+
