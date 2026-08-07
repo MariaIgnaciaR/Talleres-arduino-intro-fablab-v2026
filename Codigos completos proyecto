@@ -1,0 +1,51 @@
+# Proyecto Final — Combo 1: Alarma (LDR + Buzzer) — SOLUCIÓN COMPLETA
+int ldr = A0;
+int buzzer = 8;
+void setup() {
+  pinMode(buzzer, OUTPUT);
+}
+void loop() {
+  int valor = analogRead(ldr);
+  if (valor < 300) {
+    tone(buzzer, 1000);
+  } else {
+    noTone(buzzer);
+  }
+}
+
+# Proyecto Final — Combo 2: Semáforo peatonal (3 LEDs + Botón) — SOLUCIÓN COMPLETA
+int rojo = 8, amarillo = 9, verde = 10, boton = 2;
+void setup() {
+  pinMode(rojo, OUTPUT);
+  pinMode(amarillo, OUTPUT);
+  pinMode(verde, OUTPUT);
+  pinMode(boton, INPUT_PULLUP);
+}
+void loop() {
+  digitalWrite(verde, HIGH);
+  for (int i = 0; i < 3000; i += 50) {
+    if (digitalRead(boton) == LOW) break;
+    delay(50);
+  }
+  digitalWrite(verde, LOW);
+  digitalWrite(amarillo, HIGH);
+  delay(1000);
+  digitalWrite(amarillo, LOW);
+  digitalWrite(rojo, HIGH);
+  delay(3000);
+  digitalWrite(rojo, LOW);
+}
+
+# Proyecto Final — Combo 3: Control manual (Servo + Potenciómetro) — SOLUCIÓN COMPLETA
+#include <Servo.h>
+Servo miServo;
+int pot = A0;
+void setup() {
+  miServo.attach(9);
+}
+void loop() {
+  int valor = analogRead(pot);
+  int angulo = map(valor, 0, 1023, 0, 180);
+  miServo.write(angulo);
+  delay(15);
+}
