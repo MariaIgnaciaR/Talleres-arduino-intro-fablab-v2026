@@ -6,7 +6,7 @@ void setup() {
 }
 void loop() {
   digitalWrite(13, HIGH);
-  delay(1000);
+  delay(1000); #en miliseg o sea 1000*1/1000 = 1seg
   digitalWrite(13, LOW);
   delay(1000);
 }
