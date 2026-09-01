@@ -23,6 +23,26 @@ void loop() {
   delay(500);
 }
 
+# Actividad 3 - delay 2000 y parpadeo rápido 3 veces
+int led = 8;
+
+void setup() {
+  pinMode(led, OUTPUT);
+}
+
+void loop() {
+  // 3 parpadeos rápidos (150 ms encendido / 150 ms apagado)
+  for (int i = 0; i < 3; i++) {
+    digitalWrite(led, HIGH);
+    delay(150);
+    digitalWrite(led, LOW);
+    delay(150);
+  }
+
+  // Espera de 2 segundos antes de repetir la secuencia
+  delay(2000);
+}
+
 # Actividad 4 — Semáforo (versión simple, sin botón)
 int rojo = 8;
 int amarillo = 9;
